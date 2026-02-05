@@ -32,3 +32,24 @@ Content-Type: application/json
     "Id": "A89F6CD7-4693-457B-9009-02205DBBFE44",
     "Price": 18.99
 }
+
+###
+POST https://localhost:7136/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "test@test.com",
+  "Password": "Pass@word1"
+}
+
+###
+POST https://localhost:7136/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Email": "test@test.com",
+  "Password": "Pass@word1"
+}
+

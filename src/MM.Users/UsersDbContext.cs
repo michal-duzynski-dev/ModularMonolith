@@ -1,19 +1,23 @@
 ﻿using System.Reflection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace MM.Books;
+namespace MM.Users;
 
-public class BookDbContext : DbContext
+public class UsersDbContext : IdentityDbContext
 {
-  internal DbSet<Book> Books { get; set; }
-
-  public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)
+  public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options)
   {
+    
   }
+  
+  public DbSet<ApplicationUser> ApplicationUsers { get; set; }
   
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
-    modelBuilder.HasDefaultSchema("books");
+    base.OnModelCreating(modelBuilder);
+    
+    modelBuilder.HasDefaultSchema("users");
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
   }
 

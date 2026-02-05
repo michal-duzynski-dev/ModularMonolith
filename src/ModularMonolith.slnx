@@ -1,9 +1,14 @@
 <Solution>
-  <Folder Name="/other/">
+  <Folder Name="/Books Module/">
+    <Project Path="MM.Books/MM.Books.csproj" />
+  </Folder>
+  <Folder Name="/Users Module/">
+    <Project Path="MM.Users/MM.Users.csproj" />
+  </Folder>
+  <Folder Name="/_SolutionItems/">
     <File Path=".editorconfig" />
     <File Path=".gitignore" />
     <File Path="Directory.Build.props" />
   </Folder>
-  <Project Path="MM.Books/MM.Books.csproj" />
   <Project Path="MM.Web/MM.Web.csproj" />
 </Solution>
