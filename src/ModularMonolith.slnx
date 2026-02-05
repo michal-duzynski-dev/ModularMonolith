@@ -1,4 +1,9 @@
 <Solution>
+  <Folder Name="/other/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+  </Folder>
   <Project Path="MM.Books/MM.Books.csproj" />
   <Project Path="MM.Web/MM.Web.csproj" />
 </Solution>
