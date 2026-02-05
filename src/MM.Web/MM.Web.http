@@ -4,3 +4,31 @@ GET http://localhost:5046/books/
 Accept: application/json
 
 ###
+GET http://localhost:5046/books/A89F6CD7-4693-457B-9009-02205DBBFE45
+Accept: application/json
+
+###
+POST http://localhost:5046/books
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Id": "A89F6CD7-4693-457B-9009-02205DBBFE44",
+    "Title": "Hoobit",
+    "Author": "J.R.R. Tolkien",
+    "Price": 8.99
+}
+
+###
+DELETE http://localhost:5046/books/A89F6CD7-4693-457B-9009-02205DBBFE44
+Accept: application/json
+
+###
+POST http://localhost:5046/books/A89F6CD7-4693-457B-9009-02205DBBFE44/pricehistory
+Accept: application/json
+Content-Type: application/json
+
+{
+    "Id": "A89F6CD7-4693-457B-9009-02205DBBFE44",
+    "Price": 18.99
+}
