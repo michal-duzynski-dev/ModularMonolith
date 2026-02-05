@@ -1,11 +1,11 @@
 ﻿using FastEndpoints;
 
-namespace MM.Books;
+namespace MM.Books.Endpoints;
 
-internal class GetBookByIdEndpoint : Endpoint<GetBookByIdRequest, BookDto>
+internal class GetById : Endpoint<GetBookByIdRequest, BookDto>
 {
   private readonly IBookService _bookService;
-  public GetBookByIdEndpoint(IBookService bookService)
+  public GetById(IBookService bookService)
   {
     _bookService = bookService;
   }

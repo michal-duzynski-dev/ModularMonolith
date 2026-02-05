@@ -1,4 +1,4 @@
-﻿namespace MM.Books;
+﻿namespace MM.Books.Endpoints;
 
 public record ListBooksResponse
 {

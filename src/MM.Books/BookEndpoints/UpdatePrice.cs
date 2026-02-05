@@ -1,11 +1,11 @@
 ﻿using FastEndpoints;
 
-namespace MM.Books;
+namespace MM.Books.Endpoints;
 
-internal class UpdatePriceEndpoint : Endpoint<UpdatePriceRequest, BookDto>
+internal class UpdatePrice : Endpoint<UpdatePriceRequest, BookDto>
 {
   private readonly IBookService _bookService;
-  public UpdatePriceEndpoint(IBookService bookService)
+  public UpdatePrice(IBookService bookService)
   {
     _bookService = bookService;
   }

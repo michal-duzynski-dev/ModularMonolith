@@ -1,11 +1,11 @@
 ﻿using FastEndpoints;
 
-namespace MM.Books;
+namespace MM.Books.Endpoints;
 
-internal class CreateBookEndpoint : Endpoint<CreateBookRequest, BookDto>
+internal class Create : Endpoint<CreateBookRequest, BookDto>
 {
   private readonly IBookService _bookService;
-  public CreateBookEndpoint(IBookService bookService)
+  public Create(IBookService bookService)
   {
     _bookService = bookService;
   }
@@ -20,7 +20,7 @@ internal class CreateBookEndpoint : Endpoint<CreateBookRequest, BookDto>
   {
     var bookDto = new BookDto(req.Id, req.Title, req.Author, req.Price);
     await _bookService.CreateBookAsync(bookDto);
-    await Send.CreatedAtAsync<GetBookByIdEndpoint>(
+    await Send.CreatedAtAsync<GetById>(
       new { bookDto.Id }, bookDto, cancellation: ct);
   }
 

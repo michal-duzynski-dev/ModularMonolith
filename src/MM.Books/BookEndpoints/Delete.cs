@@ -1,11 +1,11 @@
 ﻿using FastEndpoints;
 
-namespace MM.Books;
+namespace MM.Books.Endpoints;
 
-internal class DeleteBookEndpoint : Endpoint<DeleteBookRequest>
+internal class Delete : Endpoint<DeleteBookRequest>
 {
   private readonly IBookService _bookService;
-  public DeleteBookEndpoint(IBookService bookService)
+  public Delete(IBookService bookService)
   {
     _bookService = bookService;
   }

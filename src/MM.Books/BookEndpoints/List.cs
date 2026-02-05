@@ -1,11 +1,11 @@
 using FastEndpoints;
 
-namespace MM.Books;
+namespace MM.Books.Endpoints;
 
-internal class ListBookEndpoints : EndpointWithoutRequest<ListBooksResponse>
+internal class List : EndpointWithoutRequest<ListBooksResponse>
 {
     private readonly IBookService _bookService;
-    public ListBookEndpoints(IBookService bookService)
+    public List(IBookService bookService)
     {
         _bookService = bookService;
     }
