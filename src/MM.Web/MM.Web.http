@@ -53,3 +53,22 @@ Content-Type: application/json
   "Password": "Pass@word1"
 }
 
+
+###
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzAzNjgzMzgsIkVtYWlsQWRkcmVzcyI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3NzAzNzE5MzgsIm5iZiI6MTc3MDM2ODMzOH0.UVVgzDXoUPQ5_fPSbURttga4xHals7sijxvyFHa9_3k
+POST https://localhost:7136/cart
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "BookId": "A89F6CD7-4693-457B-9009-02205DBBFE45",
+  "Quantity": 1
+}
+
+###
+GET https://localhost:7136/cart
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
