@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Books Module/">
+    <Project Path="MM.Books.Contracts/MM.Books.Contracts.csproj" />
     <Project Path="MM.Books/MM.Books.csproj" />
   </Folder>
   <Folder Name="/Users Module/">
