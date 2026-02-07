@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using FastEndpoints;
 using FastEndpoints.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using MM.Users.Domain;
 
 namespace MM.Users.UserEndpoints;
 

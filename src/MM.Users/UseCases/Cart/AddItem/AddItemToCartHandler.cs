@@ -2,6 +2,7 @@
 using MediatR;
 using MM.Books.Contracts;
 using MM.Users.Data;
+using MM.Users.Domain;
 
 namespace MM.Users.UseCases;
 

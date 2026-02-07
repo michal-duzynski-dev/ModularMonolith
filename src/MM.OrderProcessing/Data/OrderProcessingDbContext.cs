@@ -1,24 +1,22 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using MM.Users.Domain;
 
-namespace MM.Users;
+namespace MM.OrderProcessing.Data;
 
-public class UsersDbContext : IdentityDbContext
+internal class OrderProcessingDbContext : IdentityDbContext
 {
-  public UsersDbContext(DbContextOptions<UsersDbContext> options) : base(options)
+  public OrderProcessingDbContext(DbContextOptions<OrderProcessingDbContext> options) : base(options)
   {
     
   }
   
-  public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-  
+  public DbSet<Order> Orders { get; set; }
   protected override void OnModelCreating(ModelBuilder modelBuilder)
   {
     base.OnModelCreating(modelBuilder);
     
-    modelBuilder.HasDefaultSchema("users");
+    modelBuilder.HasDefaultSchema("orderProcessing");
     modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
   }
 
@@ -27,3 +25,4 @@ public class UsersDbContext : IdentityDbContext
     configurationBuilder.Properties<decimal>().HavePrecision(18, 6);
   }
 }
+

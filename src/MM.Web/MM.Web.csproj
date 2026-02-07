@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MM.Books\MM.Books.csproj" />
+    <ProjectReference Include="..\MM.OrderProcessing\MM.OrderProcessing.csproj" />
     <ProjectReference Include="..\MM.Users\MM.Users.csproj" />
   </ItemGroup>
 

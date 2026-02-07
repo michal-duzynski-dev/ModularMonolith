@@ -3,6 +3,10 @@
     <Project Path="MM.Books.Contracts/MM.Books.Contracts.csproj" />
     <Project Path="MM.Books/MM.Books.csproj" />
   </Folder>
+  <Folder Name="/Order Module/">
+    <Project Path="MM.OrderProcessing.Contracts/MM.OrderProcessing.Contracts.csproj" />
+    <Project Path="MM.OrderProcessing/MM.OrderProcessing.csproj" />
+  </Folder>
   <Folder Name="/Users Module/">
     <Project Path="MM.Users/MM.Users.csproj" />
   </Folder>

@@ -3,6 +3,7 @@ using FastEndpoints;
 using FastEndpoints.Security;
 using FastEndpoints.Swagger;
 using MM.Books;
+using MM.OrderProcessing;
 using MM.Users;
 using Serilog;
 
@@ -27,6 +28,7 @@ builder.Services.AddFastEndpoints()
 List<Assembly> mediatRAssemblies = [typeof(Program).Assembly];
 builder.Services.AddBookServices(builder.Configuration, logger, mediatRAssemblies);
 builder.Services.AddUsersModuleServices(builder.Configuration, logger, mediatRAssemblies);
+builder.Services.AddOrderProcessingModuleServices(builder.Configuration, logger, mediatRAssemblies);
 
 builder.Services.AddMediatR(cfg =>
   cfg.RegisterServicesFromAssemblies(mediatRAssemblies.ToArray())

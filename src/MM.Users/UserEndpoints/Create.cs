@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using FastEndpoints;
+using MM.Users.Domain;
 
 namespace MM.Users.UserEndpoints;
 

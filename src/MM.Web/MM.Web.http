@@ -55,8 +55,7 @@ Content-Type: application/json
 
 
 ###
-@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzAzNzAzNjQsIkVtYWlsQWRkcmVzcyI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3NzAzNzM5NjQsIm5iZiI6MTc3MDM3MDM2NH0.GvkiYufNBCos9EI7rr20rtCDtFGk57BDfKw_qD19ZHU
-
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzA0NTUyNDcsIkVtYWlsQWRkcmVzcyI6InRlc3RAdGVzdC5jb20iLCJleHAiOjE3NzA0NTg4NDcsIm5iZiI6MTc3MDQ1NTI0N30.a5t2eJLYOt2uSzQin1weLkcWueZgAoN5MpHFCzBL4Ns
 POST https://localhost:7136/cart
 Accept: application/json
 Content-Type: application/json
@@ -73,3 +72,37 @@ Accept: application/json
 Authorization: Bearer {{token}}
 
 ###
+GET https://localhost:7136/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+POST https://localhost:7136/cart/checkout
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "shippingAddressId": "A89F6CD7-4693-457B-9009-02205DBBF445",
+  "billingAddressId": "A89F6CD7-4693-457B-9009-02205DBBF446"
+}
+
+###
+GET https://localhost:7136/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+POST https://localhost:7136/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "street1" : "a",
+  "street2" : "b",
+  "city" : "c",
+  "state" : "d",
+  "postalCode" : "e",
+  "country" : "f"
+}

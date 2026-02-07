@@ -1,14 +1,16 @@
 ﻿using Ardalis.GuardClauses;
 using Microsoft.AspNetCore.Identity;
 
-namespace MM.Users;
+namespace MM.Users.Domain;
 
 public class ApplicationUser : IdentityUser
 {
   public string FullName { get; set; } = string.Empty;
   private readonly List<CartItem> _cartItems = new();
+  private readonly List<UserStreetAddress> _addresses = new();
   
   public IReadOnlyCollection<CartItem> CartItems => _cartItems.AsReadOnly();
+  public IReadOnlyCollection<UserStreetAddress> Addresses => _addresses.AsReadOnly();
   
   public void AddCartItem(CartItem cartItem)
   {
@@ -24,7 +26,30 @@ public class ApplicationUser : IdentityUser
     
     _cartItems.Add(cartItem);
   }
+  
+  internal UserStreetAddress AddAddress(Address address)
+  {
+    Guard.Against.Null(address);
+
+    // find existing address and just return it
+    var existingAddress = _addresses.SingleOrDefault(a => a.StreetAddress == address);
+    if (existingAddress != null)
+    {
+      return existingAddress;
+    }
+
+    var newAddress = new UserStreetAddress(Id, address);
+    _addresses.Add(newAddress);
+
+    return newAddress;
+  }
+
+  public void ClearCart()
+  {
+    _cartItems.Clear();
+  }
 }
+
 
 public class CartItem
 {
